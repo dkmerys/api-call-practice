@@ -13,7 +13,7 @@ export class WeatherService {
         jsonifiedResponse = false;
       }
       return jsonifiedResponse;
-    } catch {
+    } catch (error) {
       console.log('in the catch');
 
       return false;

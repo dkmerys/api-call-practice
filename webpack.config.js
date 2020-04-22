@@ -20,11 +20,11 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       title: 'weather-interface',
-      template: './src/index.html',
+      template: './src/index.html',       // why he renamed to index.html
       inject: 'body'
     })
   ],
-  module: {
+  module: {                               // removed 'html-loader' from here. (weren't using it and it caused problems upon npm run start)
     rules: [
       {
         test: /\.(gif|png|jpe?g)$/,
@@ -36,12 +36,6 @@ module.exports = {
               outputPath: 'assets/images/'
             }
           }
-        ]
-      },
-      {
-        test: /\.html$/,
-        use: [
-          'html-loader'
         ]
       },
       {
